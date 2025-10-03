@@ -1,0 +1,12 @@
+route:
+  receiver: 'email-alert'
+  group_by: ['alertname']
+  repeat_interval: 5m
+receivers:
+  - name: 'email-alert'
+    email_configs:
+      - to: 'alertmanager@gmail.com'
+        from: 'alertmanager@gmail.com'
+        smarthost: 'smtp.gmail.com:587'
+        auth_username: 'your_app_email'
+        auth_password: 'your_app_password'
